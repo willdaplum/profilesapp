@@ -1,13 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
+import Home from "./Home.jsx";
+import ProtectedLayout from "./ProtectedLayout";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Authenticator } from "@aws-amplify/ui-react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Authenticator>
-      <App />
-    </Authenticator>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/app"
+          element={
+            <ProtectedLayout>
+              <App />
+            </ProtectedLayout>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

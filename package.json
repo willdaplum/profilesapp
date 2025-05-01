@@ -12,9 +12,12 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^6.9.1",
     "aws-amplify": "^6.13.1",
+    "bootstrap": "^5.3.5",
     "hls.js": "^1.6.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router": "^7.5.3",
+    "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.14.0",
