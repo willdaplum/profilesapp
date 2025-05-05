@@ -1,8 +1,9 @@
 import { useState } from "react";
-import FilmDesc from "./FilmDesc.jsx"
+import FilmDesc from "./FilmDesc.jsx";
+import posterSrc from "./assets/a_minecraft_movie-p1640942.jpg";
 
 export default function Poster() {
-  const { src } = "a_minecraft_movie-p1640942.jpg";
+  // const { src } = "./assets/a_minecraft_movie-p1640942.jpg";
   const [dimensions, setDimensions] = useState({ height: 0, width: 0 });
 
   const handleImageLoad = (e) => {
@@ -21,7 +22,7 @@ export default function Poster() {
       >
         <h3 className="text-center">NOW SHOWING</h3>
         <img
-          src="a_minecraft_movie-p1640942.jpg"
+          src={posterSrc}
           style={{
             maxHeight: "80%",
             margin: "0 auto",
