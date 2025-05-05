@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FilmDesc from "./FilmDesc.jsx"
 
 export default function Poster() {
   const { src } = "a_minecraft_movie-p1640942.jpg";
@@ -29,11 +30,7 @@ export default function Poster() {
           alt="poster"
         />
         <div className="card-body">
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content. Image Height: {dimensions.height}px,
-            Image Width: {dimensions.width}px
-          </p>
+          <FilmDesc/>
         </div>
       </div>
     </div>
