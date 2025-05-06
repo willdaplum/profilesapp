@@ -18,7 +18,7 @@ export default function FilmDesc() {
   let movieTitle = "A Minecraft Movie";
   let runTime = "1h 41m";
   let description = "Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.";
-  let rating = "g";
+  let rating = "pg";
   let year = "2025";
 
   return (
