@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="container-fluid d-flex justify-content-center align-items-center">
-        <div className="d-flex flex-row align-items-center gap-5">
-          <div className="d-flex flex-column align-items-center">
+      <div className="container-fluid d-flex justify-content-center pt-3">
+        <div className="d-flex flex-row align-items-start gap-5">
+          <div>
             <ProductInfo />
             <ProductInfo />
             <ProductInfo />
