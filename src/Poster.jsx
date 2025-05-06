@@ -1,7 +1,9 @@
 import { useState } from "react";
+import FilmDesc from "./FilmDesc.jsx";
+import posterSrc from "./assets/a_minecraft_movie-p1640942.jpg";
 
 export default function Poster() {
-  const { src } = "a_minecraft_movie-p1640942.jpg";
+  // const { src } = "./assets/a_minecraft_movie-p1640942.jpg";
   const [dimensions, setDimensions] = useState({ height: 0, width: 0 });
 
   const handleImageLoad = (e) => {
@@ -20,7 +22,7 @@ export default function Poster() {
       >
         <h3 className="text-center">NOW SHOWING</h3>
         <img
-          src="a_minecraft_movie-p1640942.jpg"
+          src={posterSrc}
           style={{
             maxHeight: "80%",
             margin: "0 auto",
@@ -29,11 +31,7 @@ export default function Poster() {
           alt="poster"
         />
         <div className="card-body">
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content. Image Height: {dimensions.height}px,
-            Image Width: {dimensions.width}px
-          </p>
+          <FilmDesc/>
         </div>
       </div>
     </div>

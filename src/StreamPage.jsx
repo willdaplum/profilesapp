@@ -1,5 +1,5 @@
-import NavBar from "./NavBar.jsx";
 import VideoWithHLS from "./VideoWithHLS.jsx";
+import FilmDesc from "./FilmDesc.jsx";
 
 export default function StreamPage() {
   return (
@@ -17,15 +17,8 @@ export default function StreamPage() {
 
           {/* Card */}
           <div className="card w-100">
-            <div className="card-header">Movie Title</div>
             <div className="card-body">
-              <blockquote className="blockquote mb-0">
-                <p>A well-known quote, contained in a blockquote element.</p>
-                <footer className="blockquote-footer">
-                  Someone famous in{" "}
-                  <cite title="Source Title">Source Title</cite>
-                </footer>
-              </blockquote>
+              <FilmDesc/>
             </div>
           </div>
         </div>
