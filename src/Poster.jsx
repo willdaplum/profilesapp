@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import FilmDesc from "./FilmDesc.jsx";
 import posterSrc from "./assets/a_minecraft_movie-p1640942.jpg";
 
 export default function Poster() {
-  // const { src } = "./assets/a_minecraft_movie-p1640942.jpg";
   const [dimensions, setDimensions] = useState({ height: 0, width: 0 });
+  const imgRef = useRef(null);
 
-  const handleImageLoad = (e) => {
-    const { offsetHeight, offsetWidth } = e.target;
-    setDimensions({ height: offsetHeight, width: offsetWidth });
+  const updateDimensions = () => {
+    if (imgRef.current) {
+      const { offsetHeight, offsetWidth } = imgRef.current;
+      setDimensions({ height: offsetHeight, width: offsetWidth });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const handleImageLoad = () => {
+    updateDimensions();
   };
 
   return (
@@ -22,6 +33,7 @@ export default function Poster() {
       >
         <h3 className="text-center">NOW SHOWING</h3>
         <img
+          ref={imgRef}
           src={posterSrc}
           style={{
             maxHeight: "80%",
@@ -31,7 +43,7 @@ export default function Poster() {
           alt="poster"
         />
         <div className="card-body">
-          <FilmDesc/>
+          <FilmDesc />
         </div>
       </div>
     </div>
