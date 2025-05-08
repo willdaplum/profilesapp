@@ -1,21 +1,21 @@
-
 import React from "react";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavBar({ user, signOut }) {
   return (
     <nav className="navbar bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img
-            src="/docs/5.3/assets/brand/bootstrap-logo.svg"
-            alt="Logo"
-            width="30"
-            height="24"
-            className="d-inline-block align-text-top"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-app"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4z" />
+          </svg>
           Stream-App
         </a>
         <form className="d-flex">
