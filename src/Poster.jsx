@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useElementHeight } from "./useElementHeight";
 import FilmDesc from "./FilmDesc.jsx";
 import posterSrc from "./assets/a_minecraft_movie-p1640942.jpg";
 
@@ -16,7 +17,7 @@ export default function Poster() {
       const { width: preciseWidth } = imgRef.current.getBoundingClientRect();
       setDimensions({
         height: offsetHeight,
-        width: Math.ceil(preciseWidth), // ✅ round up to avoid subpixel gap
+        width: Math.ceil(preciseWidth),
       });
     }
   };
@@ -30,19 +31,24 @@ export default function Poster() {
     updateDimensions();
   };
 
+  const [descRef, descHeight] = useElementHeight();
+  const [headerRef, headerHeight] = useElementHeight();
+
+  const maxImageHeight = `calc(100vh - 80px - ${headerHeight}px - ${descHeight}px)`;
+
   return (
     <div className="d-flex justify-content-center">
       <div
         className="card"
         style={{
-          height: "calc(100vh - 80px)",
+          height: "calc(100bh - 80px)",
           width: dimensions.width > 0 ? `${dimensions.width + 1}px` : "auto",
         }}
       >
         <h3
           className="text-center mb-0"
+          ref={headerRef}
           style={{
-            height: "6%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -55,7 +61,7 @@ export default function Poster() {
           ref={imgRef}
           src={posterSrc}
           style={{
-            maxHeight: "80%",
+            maxHeight: maxImageHeight,
             display: "block",
             marginLeft: "auto",
             marginRight: "auto",
@@ -63,11 +69,8 @@ export default function Poster() {
           onLoad={handleImageLoad}
           alt="poster"
         />
-        <div
-          className="card-body p-2"
-          style={{ height: "14%"}}
-        >
-          <FilmDesc />
+        <div className="card-body p-2" ref={descRef}>
+          <FilmDesc posterWidth={dimensions.width} />
         </div>
       </div>
     </div>
