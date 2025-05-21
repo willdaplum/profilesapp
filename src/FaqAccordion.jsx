@@ -5,7 +5,7 @@ export default function FaqAccordion() {
   return (
     <div className="accordion accordion-flush" id="accordionFlushExample">
       {ids.map((id) => (
-      <AccordionItem key={id.id} idNum={id} parentId="accordionFlushExample"/>
+        <AccordionItem key={id} idNum={id} parentId="accordionFlushExample" />
       ))}
     </div>
   );

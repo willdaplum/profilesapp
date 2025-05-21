@@ -1,8 +1,8 @@
-export default function AccordionItem(idNum, parentId) {
+export default function AccordionItem({ idNum, parentId }) {
   const question = "Accordion Item" + idNum.toString();
   const answer =
     "Placeholder content for this accordion, which is intended to demonstrate the .accordion-flush className. This is the first items accordion body.";
-  const  id = "flush-collapse" + idNum.toString();
+  const id = "flush-collapse" + idNum.toString();
   return (
     <div className="accordion-item">
       <h2 className="accordion-header">
