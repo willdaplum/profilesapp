@@ -1,12 +1,11 @@
 import { Button } from "@aws-amplify/ui-react";
 import Poster from "./Poster.jsx";
-import ProductInfo from "./ProductInfo.jsx";
 import NavBar from "./NavBar.jsx";
 
 export default function Home() {
-  const promoTagline = "Responsive left-aligned hero with image";
+  const promoTagline = "One movie, every day.";
   const promoDescription =
-    "Quickly design and customize responsive mobile-first sites with Bootstrap, the worlds most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.";
+    "Stop wasting time flipping through multiple streaming services with bloated catalogs. Find what you're looking for immediately: quality, human-selected films daily. Just $X.XX per month.";
   return (
     <>
       <NavBar />

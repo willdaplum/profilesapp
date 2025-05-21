@@ -5,7 +5,7 @@ export default function NavBar({ user, signOut }) {
   return (
     <nav className="navbar bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
