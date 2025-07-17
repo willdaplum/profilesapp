@@ -1,19 +1,20 @@
-export default function ProductInfo() {
+export default function ProductInfo({title, description, iconName}) {
+  {/*const title = "Featured title";
+  const description =
+    "Paragraph of text beneath the heading to explain the heading.";*/}
   return (
-    <div className="card m-3">
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <h6 className="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" className="card-link">
-          Card link
-        </a>
-        <a href="#" className="card-link">
-          Another link
-        </a>
+    <div className="col d-flex align-items-start">
+      <svg
+        className="bi text-body-secondary flex-shrink-0 me-3"
+        width="1.75em"
+        height="1.75em"
+        aria-hidden="true"
+      >
+        <use xlinkHref={"#" + iconName}></use>
+      </svg>
+      <div>
+        <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">{title}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
