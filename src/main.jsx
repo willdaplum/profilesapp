@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </ProtectedLayout>
           }
         />
-        <Route path="/about" element={<AboutPage/>} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
