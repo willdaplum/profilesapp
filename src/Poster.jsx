@@ -1,9 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useElementHeight } from "./useElementHeight";
 import FilmDesc from "./FilmDesc.jsx";
-import posterSrc from "./assets/a_minecraft_movie-p1640942.jpg";
 
-export default function Poster() {
+export default function Poster({
+  title,
+  runTime,
+  description,
+  rating,
+  year,
+  posterSrc,
+}) {
   const [dimensions, setDimensions] = useState({
     height: 0,
     width: 0,
@@ -70,7 +76,14 @@ export default function Poster() {
           alt="poster"
         />
         <div className="card-body p-2" ref={descRef}>
-          <FilmDesc posterWidth={dimensions.width} />
+          <FilmDesc
+            posterWidth={dimensions.width}
+            title={title}
+            runTime={runTime}
+            description={description}
+            rating={rating}
+            year={year}
+          />
         </div>
       </div>
     </div>
